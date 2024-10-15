@@ -28,28 +28,7 @@ In this section, we use the `marefa-mt-en-ar` model to translate English text in
 ### Model:
 - **Marefa MT (English to Arabic)**: [Marefa English-Arabic Translation Model](https://huggingface.co/marefa-nlp/marefa-mt-en-ar)
 
-### Example:
 
-```python
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
-
-# Load Marefa translation model and tokenizer
-tokenizer = AutoTokenizer.from_pretrained("marefa-nlp/marefa-mt-en-ar")
-model = AutoModelForSeq2SeqLM.from_pretrained("marefa-nlp/marefa-mt-en-ar")
-
-# Input text for translation
-english_text = "Artificial intelligence is transforming industries worldwide."
-
-# Tokenize the text
-inputs = tokenizer(english_text, return_tensors="pt", padding=True)
-
-# Generate the translation
-outputs = model.generate(inputs["input_ids"], max_length=50)
-translated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
-
-# Print the translated Arabic text
-print(translated_text)
-```
 
 
 ## 3. Text Generation with Gemini API
@@ -60,30 +39,9 @@ In this section, we use the `gemini-1.5-flash` model from the `genai` library to
 
 Ensure that the `google-generativeai` package is installed and the `api_key` is configured.
 
-```bash
-pip install google-generativeai
-```
 
 
-### Example:
 
-```python
-import google.generativeai as genai
-
-# Configure your API key for the Gemini model
-genai.configure(api_key="your_api_key")
-
-# Define the prompt for text generation
-prompt = "The future of AI in healthcare includes"
-
-# Generate text using the Gemini model
-response = genai.generate_content(prompt)
-
-# Extract and print the generated text
-generated_text = response.result.candidates[0].content.parts[0].text
-print(generated_text)
-
-```
 
 
 ## Requirements
