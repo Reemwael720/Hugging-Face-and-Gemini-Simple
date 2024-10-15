@@ -1,1 +1,0 @@
-# Hugging-Face-and-Gemini-Simple
