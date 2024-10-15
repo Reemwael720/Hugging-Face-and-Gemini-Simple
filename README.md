@@ -18,21 +18,6 @@ In this section, we use the pre-trained `DistilBERT` model fine-tuned on the SST
 ### Model:
 - **DistilBERT (Fine-tuned SST-2)**: [DistilBERT Base Uncased (SST-2)](https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english)
 
-### Example:
-
-```python
-from transformers import pipeline
-
-# Load pre-trained DistilBERT sentiment analysis model
-classifier = pipeline('sentiment-analysis', model='distilbert-base-uncased-finetuned-sst-2-english')
-
-# Input text for sentiment analysis
-text = "I am so excited"
-
-# Perform sentiment analysis
-result = classifier(text)
-print(result)
-```
 
 
 
